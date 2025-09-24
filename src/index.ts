@@ -21,17 +21,25 @@ async function main() {
 
   // console.log(result);
 
-  const updateUser = await prisma.user.update({
+  // const updateUser = await prisma.user.update({
+  //   where: {
+  //     email: "ayajuddin@gmail.com",
+  //   },
+  //   data: {
+  //     name: "Ayaz Uddin",
+  //     email: "ayaz@gmail.com",
+  //   },
+  // });
+
+  // console.log(updateUser);
+
+  const deleteUser = await prisma.user.delete({
     where: {
-      email: "ayajuddin@gmail.com",
-    },
-    data: {
-      name: "Ayaz Uddin",
-      email: "ayaz@gmail.com",
+      id: 2,
     },
   });
 
-  console.log(updateUser);
+  console.log(deleteUser);
 }
 
 main();
