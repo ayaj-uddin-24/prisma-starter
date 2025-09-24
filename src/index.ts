@@ -13,13 +13,25 @@ async function main() {
 
   // console.log(result);
 
-  const result = await prisma.user.findUniqueOrThrow({
+  // const result = await prisma.user.findUniqueOrThrow({
+  //   where: {
+  //     id: 4,
+  //   },
+  // });
+
+  // console.log(result);
+
+  const updateUser = await prisma.user.update({
     where: {
-      id: 4,
+      email: "ayajuddin@gmail.com",
+    },
+    data: {
+      name: "Ayaz Uddin",
+      email: "ayaz@gmail.com",
     },
   });
 
-  console.log(result);
+  console.log(updateUser);
 }
 
 main();
